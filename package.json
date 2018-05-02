@@ -6,8 +6,11 @@
   "scripts": {
     "build": "npm run clean && webpack -p",
     "clean": "rimraf ./dist/index.js",
-    "serve": "webpack -p --watch",
-    "test": "jest"
+    "lint": "eslint source/*",
+    "build:watch": "webpack -p --watch",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest --watch"
   },
   "repository": {
     "type": "git",
@@ -30,17 +33,30 @@
     "url": "https://github.com/devshawn/react-dayjs/issues"
   },
   "homepage": "https://github.com/devshawn/react-dayjs#readme",
+  "peerDependencies": {
+    "dayjs": "^1.5.16",
+    "react": "^15.6.0 || ^16.0.0"
+  },
+  "dependencies": {
+    "prop-types": "^15.6.1"
+  },
   "devDependencies": {
+    "@types/react-dom": "^16.0.5",
     "babel-loader": "^7.1.4",
     "babel-plugin-transform-react-jsx": "^6.24.1",
     "babel-preset-env": "^1.6.1",
     "dayjs": "^1.5.16",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0",
+    "jest": "^22.4.3",
     "path": "^0.12.7",
-    "prop-types": "^15.6.1",
     "react": "^16.3.2",
+    "react-dom": "^16.3.2",
     "rimraf": "^2.6.2",
     "webpack": "^4.6.0",
-    "webpack-cli": "^2.1.2",
-    "webpack-dev-server": "^3.1.3"
+    "webpack-cli": "^2.1.2"
   }
 }
