@@ -1,0 +1,46 @@
+{
+  "name": "react-dayjs",
+  "version": "0.1.0",
+  "description": "React component for the dayjs date library.",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "npm run clean && webpack -p",
+    "clean": "rimraf ./dist/index.js",
+    "serve": "webpack -p --watch",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devshawn/react-dayjs.git"
+  },
+  "keywords": [
+    "dayjs",
+    "date",
+    "moment",
+    "time",
+    "react",
+    "react-component"
+  ],
+  "author": {
+    "name": "Shawn Seymour",
+    "url": "https://devshawn.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/devshawn/react-dayjs/issues"
+  },
+  "homepage": "https://github.com/devshawn/react-dayjs#readme",
+  "devDependencies": {
+    "babel-loader": "^7.1.4",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
+    "dayjs": "^1.5.16",
+    "path": "^0.12.7",
+    "prop-types": "^15.6.1",
+    "react": "^16.3.2",
+    "rimraf": "^2.6.2",
+    "webpack": "^4.6.0",
+    "webpack-cli": "^2.1.2",
+    "webpack-dev-server": "^3.1.3"
+  }
+}
