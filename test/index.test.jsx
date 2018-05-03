@@ -51,7 +51,17 @@ describe("react-dayjs formats", () => {
     it("should format dates", () => {
         const format = "MM-DD-YYYY"
         const date = TestUtils.renderIntoDocument(<DayJS date={ DATE_STRING } format={ format }/>)
-        expect(ReactDOM.findDOMNode(date).innerHTML).toEqual(`${dayjs(DATE_STRING).format(format)}`)
+        expect(ReactDOM.findDOMNode(date).innerHTML).toEqual(dayjs(DATE_STRING).format(format))
+    })
+
+    it("should render isValid", () => {
+        const date = TestUtils.renderIntoDocument(<DayJS date={ DATE_STRING } displayIsValid/>)
+        expect(ReactDOM.findDOMNode(date).innerHTML).toEqual(`${dayjs(DATE_STRING).isValid()}`)
+    })
+
+    it("should render daysInMonth", () => {
+        const date = TestUtils.renderIntoDocument(<DayJS date={ DATE_STRING } daysInMonth/>)
+        expect(ReactDOM.findDOMNode(date).innerHTML).toEqual(`${dayjs(DATE_STRING).daysInMonth()}`)
     })
 
     it("should render unix milliseconds", () => {

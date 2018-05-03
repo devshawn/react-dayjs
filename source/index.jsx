@@ -13,7 +13,7 @@ export default class DayJS extends React.Component {
     }
 
     update() {
-        const { date, format, children, add, subtract, toJSON, toISOString, asString, unixSeconds, unixMilliseconds } = this.props
+        const { date, format, children, add, subtract, daysInMonth, toJSON, toISOString, asString, unixSeconds, unixMilliseconds, displayIsValid } = this.props
         let dayjsDate = generateInitialDate(date, children)
 
         if (add) {
@@ -22,6 +22,14 @@ export default class DayJS extends React.Component {
 
         if (subtract) {
             dayjsDate = subtractFromDate(dayjsDate, subtract)
+        }
+
+        if (displayIsValid) {
+            return this.setState({ value: `${dayjsDate.isValid()}` })
+        }
+
+        if (daysInMonth) {
+            return this.setState({ value: dayjsDate.daysInMonth() })
         }
 
         if (toJSON) {
@@ -70,6 +78,8 @@ DayJS.propTypes = {
     asString: PropTypes.bool,
     unixSeconds: PropTypes.bool,
     unixMilliseconds: PropTypes.bool,
+    daysInMonth: PropTypes.bool,
+    displayIsValid: PropTypes.bool,
     add: PropTypes.object,
     subtract: PropTypes.object,
     children: PropTypes.string
@@ -79,11 +89,13 @@ DayJS.defaultProps = {
     element: "span",
     date: null,
     format: null,
-    toJSON: null,
-    toISOString: null,
-    asString: null,
-    unixSeconds: null,
-    unixMilliseconds: null,
+    toJSON: false,
+    toISOString: false,
+    asString: false,
+    unixSeconds: false,
+    unixMilliseconds: false,
+    daysInMonth: false,
+    displayIsValid: false,
     add: null,
     subtract: null,
     children: null
