@@ -9,7 +9,8 @@
     "lint": "eslint source/*",
     "build:watch": "webpack -p --watch",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "verify": "npm run lint && npm run test"
   },
   "repository": {
     "type": "git",

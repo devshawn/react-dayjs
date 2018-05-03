@@ -47,7 +47,13 @@ describe("react-dayjs manipulation", () => {
     })
 })
 
-describe("react-dayjs firnats", () => {
+describe("react-dayjs formats", () => {
+    it("should format dates", () => {
+        const format = "MM-DD-YYYY"
+        const date = TestUtils.renderIntoDocument(<DayJS date={ DATE_STRING } format={ format }/>)
+        expect(ReactDOM.findDOMNode(date).innerHTML).toEqual(`${dayjs(DATE_STRING).format(format)}`)
+    })
+
     it("should render unix milliseconds", () => {
         const date = TestUtils.renderIntoDocument(<DayJS date={ DATE_STRING } unixMilliseconds/>)
         expect(ReactDOM.findDOMNode(date).innerHTML).toEqual(`${dayjs(DATE_STRING).valueOf()}`)
