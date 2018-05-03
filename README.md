@@ -2,7 +2,7 @@
 
 React component for the [dayjs][dayjs] date library. Currently in active development.
 
-[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://raw.githubusercontent.com/headzoo/react-moment/master/LICENSE)
+[![Build Status](https://travis-ci.org/devshawn/react-dayjs.svg?branch=master)](https://travis-ci.org/devshawn/react-dayjs) [![codecov](https://codecov.io/gh/devshawn/react-dayjs/branch/master/graph/badge.svg)](https://codecov.io/gh/devshawn/react-dayjs)  [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://raw.githubusercontent.com/headzoo/react-moment/master/LICENSE)
 
 ## Installing
 

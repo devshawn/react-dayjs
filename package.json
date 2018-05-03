@@ -9,7 +9,6 @@
     "lint": "eslint source/*",
     "build:watch": "webpack -p --watch",
     "test": "jest",
-    "test:coverage": "jest --coverage",
     "test:watch": "jest --watch"
   },
   "repository": {
@@ -33,6 +32,13 @@
     "url": "https://github.com/devshawn/react-dayjs/issues"
   },
   "homepage": "https://github.com/devshawn/react-dayjs#readme",
+  "jest": {
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "source/*"
+    ]
+  },
   "peerDependencies": {
     "dayjs": "^1.5.16",
     "react": "^15.6.0 || ^16.0.0"
