@@ -7,7 +7,7 @@
     "build": "npm run clean && webpack -p",
     "clean": "rimraf ./dist/index.js",
     "lint": "eslint source/*",
-    "build:watch": "webpack -p --watch",
+    "serve": "webpack -p --watch",
     "test": "jest",
     "test:watch": "jest --watch",
     "verify": "npm run lint && npm run test"

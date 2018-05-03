@@ -35,7 +35,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.jsx$/,
+                test: /\.jsx?$/,
                 include: path.resolve(__dirname, "source"),
                 exclude: /(node_modules|bower_components|build)/,
                 use: {
@@ -46,5 +46,8 @@ module.exports = {
                 }
             }
         ]
+    },
+    resolve: {
+        extensions: [".js", ".jsx"]
     }
 }
