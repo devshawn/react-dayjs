@@ -52,15 +52,17 @@ export default class DayJS extends React.Component {
     }
 
     render() {
+        const Element = this.props.element
         return (
-            <span>
+            <Element>
                 { this.state.value }
-            </span>
+            </Element>
         )
     }
 }
 
 DayJS.propTypes = {
+    element: PropTypes.any,
     date: PropTypes.string,
     format: PropTypes.string,
     toJSON: PropTypes.bool,
@@ -74,6 +76,7 @@ DayJS.propTypes = {
 }
 
 DayJS.defaultProps = {
+    element: "span",
     date: null,
     format: null,
     toJSON: null,

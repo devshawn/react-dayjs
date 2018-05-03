@@ -21,15 +21,17 @@ describe("react-dayjs main", () => {
         const date = TestUtils.renderIntoDocument(<DayJS date={ DATE_STRING }/>)
         expect(ReactDOM.findDOMNode(date).innerHTML).toEqual(dayjs(DATE_STRING).format())
     })
+})
 
-    it("should render unix milliseconds", () => {
-        const date = TestUtils.renderIntoDocument(<DayJS date={ DATE_STRING } unixMilliseconds/>)
-        expect(ReactDOM.findDOMNode(date).innerHTML).toEqual(`${dayjs(DATE_STRING).valueOf()}`)
+describe("react-dayjs element", () => {
+    it("should be span by default", () => {
+        const date = TestUtils.renderIntoDocument(<DayJS date={ DATE_STRING }/>)
+        expect(ReactDOM.findDOMNode(date).tagName).toEqual("SPAN")
     })
 
-    it("should render unix seconds", () => {
-        const date = TestUtils.renderIntoDocument(<DayJS date={ DATE_STRING } unixSeconds/>)
-        expect(ReactDOM.findDOMNode(date).innerHTML).toEqual(`${dayjs(DATE_STRING).unix()}`)
+    it("should be able to be changed", () => {
+        const date = TestUtils.renderIntoDocument(<DayJS date={ DATE_STRING } element="div"/>)
+        expect(ReactDOM.findDOMNode(date).tagName).toEqual("DIV")
     })
 })
 
@@ -45,7 +47,17 @@ describe("react-dayjs manipulation", () => {
     })
 })
 
-describe("react-dayjs toStrings", () => {
+describe("react-dayjs firnats", () => {
+    it("should render unix milliseconds", () => {
+        const date = TestUtils.renderIntoDocument(<DayJS date={ DATE_STRING } unixMilliseconds/>)
+        expect(ReactDOM.findDOMNode(date).innerHTML).toEqual(`${dayjs(DATE_STRING).valueOf()}`)
+    })
+
+    it("should render unix seconds", () => {
+        const date = TestUtils.renderIntoDocument(<DayJS date={ DATE_STRING } unixSeconds/>)
+        expect(ReactDOM.findDOMNode(date).innerHTML).toEqual(`${dayjs(DATE_STRING).unix()}`)
+    })
+
     it("should render toJSON", () => {
         const date = TestUtils.renderIntoDocument(<DayJS date={ DATE_STRING } toJSON/>)
         expect(ReactDOM.findDOMNode(date).innerHTML).toEqual(dayjs(DATE_STRING).toJSON())
