@@ -4,6 +4,8 @@ The react-dayjs component, DayJS, is a react component used for displaying, form
 
 * [Quick Start](#quick-start)
 * [Props](#props)
+    * [Date](#date)
+    * [Format](#format)
     * [Element](#element)
 
 ## Quick Start
@@ -32,23 +34,14 @@ This will output:
 ## Props
 The component currently supports the following props:
 
-### element
+### date
 
-_element = { string | React.Component }_
+_date = { string | number | Date | dayjs object }_
 
-The element the component should be rendered as. The default is `time`.
+The date to be displayed, if not given as children. The default is the current time.
 
 ```jsx
-import React from 'react';
-import DayJS from 'react-dayjs';
-
-export default class MyComponent extends React.Component {
-    render() {
-        return (
-            <DayJS element="span">2000-01-31T12:59-0500</DayJS>
-        )
-    }
-}
+<DayJS date={ "2000-01-31T12:59-0500" }>2000-01-31T12:59-0500</DayJS>
 ```
 
 This will output:
@@ -56,3 +49,28 @@ This will output:
 ```html
 <span>2000-01-31T11:59:00-05:00</span>
 ```
+
+### format
+
+_format = { string }_
+
+The format the date should be displayed in. The default is `ISO 8601`, with no fractional seconds.
+
+The available formats can be found on the [dayjs][dayjs] README.
+
+### element
+
+_element = { string | React.Component }_
+
+The element the component should be rendered as. The default is `time`.
+
+```jsx
+<DayJS element="span">2000-01-31T12:59-0500</DayJS>
+```
+
+This will output:
+
+```html
+<span>2000-01-31T11:59:00-05:00</span>
+```
+[dayjs]: https://github.com/xx45/dayjs#format

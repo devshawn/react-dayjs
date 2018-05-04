@@ -71,7 +71,7 @@ export default class DayJS extends React.Component {
 
 DayJS.propTypes = {
     element: PropTypes.any,
-    date: PropTypes.string,
+    date: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.array, PropTypes.object]),
     format: PropTypes.string,
     toJSON: PropTypes.bool,
     toISOString: PropTypes.bool,

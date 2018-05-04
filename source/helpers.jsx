@@ -1,10 +1,10 @@
 import dayjs from "dayjs"
 
 export function generateInitialDate(date, children) {
-    if (date) {
-        return dayjs(date)
-    } else if (children) {
+    if (children) {
         return dayjs(children)
+    } else if (date) {
+        return dayjs(date)
     }
     return dayjs()
 }

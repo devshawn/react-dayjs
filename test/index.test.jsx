@@ -5,6 +5,7 @@ import TestUtils from "react-dom/test-utils"
 import dayjs from "dayjs"
 
 const DATE_STRING = "2000-01-31T12:59-0500"
+const DATE_STRING_2 = "2100-01-31T12:59-0500"
 
 describe("react-dayjs main", () => {
     it("default", () => {
@@ -17,8 +18,28 @@ describe("react-dayjs main", () => {
         expect(ReactDOM.findDOMNode(date).innerHTML).toEqual(dayjs(DATE_STRING).format())
     })
 
-    it("should render date prop", () => {
+    it("should render date prop with date string", () => {
         const date = TestUtils.renderIntoDocument(<DayJS date={ DATE_STRING }/>)
+        expect(ReactDOM.findDOMNode(date).innerHTML).toEqual(dayjs(DATE_STRING).format())
+    })
+
+    it("should render date prop with date object", () => {
+        const date = TestUtils.renderIntoDocument(<DayJS date={ new Date(DATE_STRING) }/>)
+        expect(ReactDOM.findDOMNode(date).innerHTML).toEqual(dayjs(DATE_STRING).format())
+    })
+
+    it("should render date prop with date in milliseconds", () => {
+        const date = TestUtils.renderIntoDocument(<DayJS date={ 949341540000 }/>)
+        expect(ReactDOM.findDOMNode(date).innerHTML).toEqual(dayjs(DATE_STRING).format())
+    })
+
+    it("should render date prop with dayjs object", () => {
+        const date = TestUtils.renderIntoDocument(<DayJS date={ dayjs(DATE_STRING) }/>)
+        expect(ReactDOM.findDOMNode(date).innerHTML).toEqual(dayjs(DATE_STRING).format())
+    })
+
+    it("should render children over date prop", () => {
+        const date = TestUtils.renderIntoDocument(<DayJS date={ dayjs(DATE_STRING_2) }>{ DATE_STRING }</DayJS>)
         expect(ReactDOM.findDOMNode(date).innerHTML).toEqual(dayjs(DATE_STRING).format())
     })
 })
