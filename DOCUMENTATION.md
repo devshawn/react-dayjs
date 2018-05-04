@@ -4,12 +4,18 @@ The react-dayjs component, DayJS, is a react component used for displaying, form
 
 * [Quick Start](#quick-start)
 * [Props](#props)
-    * [Date](#date)
-    * [Format](#format)
-    * [Element](#element)
+    * [date](#date)
+    * [format](#format)
+    * [element](#element)
+    * [add](#add)
+    * [subtract](#subtract)
     * [toJSON](#tojson)
     * [toISOString](#toisostring)
-    * [toString](#tostring)
+    * [asString](#asString)
+    * [unixSeconds](#unixseconds)
+    * [unixMilliseconds](#unixmilliseconds)
+    * [daysInMonth](#daysinmonth)
+    * [displayIsValid](#displayisvalid)
 
 ## Quick Start
 Add the `DayJS` component to a component:
@@ -61,6 +67,16 @@ The format the date should be displayed in. The default is `ISO 8601`, with no f
 
 The available formats can be found on the [dayjs][dayjs] README.
 
+```jsx
+<DayJS format="MM-DD-YYYY">2000-01-31T12:59-0500</DayJS>
+```
+
+This will output:
+
+```html
+<time>01-31-2000</time>
+```
+
 ### element
 
 _element = { string | React.Component }_
@@ -75,6 +91,36 @@ This will output:
 
 ```html
 <span>2000-01-31T11:59:00-05:00</span>
+```
+
+### add
+_add = { object }_
+
+Adds a specific amount of time to the given date.
+
+```jsx
+<DayJS add={ { hours: 1 } }>2000-01-31T12:59-0500</DayJS>
+```
+
+This will output:
+
+```html
+<time>2000-01-31T12:59:00-05:00</time>
+```
+
+### subtract
+_subtract = { object }_
+
+Subtracts a specific amount of time to the given date.
+
+```jsx
+<DayJS subtract={ { hours: 1 } }>2000-01-31T12:59-0500</DayJS>
+```
+
+This will output:
+
+```html
+<time>2000-01-31T10:59:00-05:00</time>
 ```
 
 ### toJSON
@@ -107,19 +153,79 @@ This will output:
 <time>2000-01-31T17:59:00.000Z</time>
 ```
 
-### toString
-_toString = { boolean }_
+### asString
+_asString = { boolean }_
 
-Formats a date as a more readable string.
+Formats a date as a more readable string, using the `toString` dayjs function.
 
 ```jsx
-<DayJS toString={ true }>2000-01-31T12:59-0500</DayJS>
+<DayJS asString={ true }>2000-01-31T12:59-0500</DayJS>
 ```
 
 This will output:
 
 ```html
 <time>Mon, 31 Jan 2000 17:59:00 GMT</time>
+```
+
+### unixSeconds
+_unixSeconds = { boolean }_
+
+Displays the time as a unix timestamp (the number of seconds since Unix Epoch).
+
+```jsx
+<DayJS unixSeconds={ true }>2000-01-31T12:59-0500</DayJS>
+```
+
+This will output:
+
+```html
+<time>949341540</time>
+```
+
+### unixMilliseconds
+_unixMilliseconds = { boolean }_
+
+Displays the time as a unix timestamp in milliseconds (the number of milliseconds since Unix Epoch).
+
+```jsx
+<DayJS unixMilliseconds={ true }>2000-01-31T12:59-0500</DayJS>
+```
+
+This will output:
+
+```html
+<time>949341540000</time>
+```
+
+### daysInMonth
+_daysInMonth = { boolean }_
+
+Displays the number of days in the month of the given time.
+
+```jsx
+<DayJS daysInMonth={ true }>2000-01-31T12:59-0500</DayJS>
+```
+
+This will output:
+
+```html
+<time>31</time>
+```
+
+### displayIsValid
+_displayIsValid = { boolean }_
+
+Displays if the given date is valid.
+
+```jsx
+<DayJS displayIsValid={ true }>2000-01-31T12:59-0500</DayJS>
+```
+
+This will output:
+
+```html
+<time>true</time>
 ```
 
 [dayjs]: https://github.com/xx45/dayjs#format
