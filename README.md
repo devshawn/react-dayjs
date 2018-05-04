@@ -50,7 +50,7 @@ export default class MyComponent extends React.Component {
 This will output:
 
 ```html
-<span>2000-01-31T11:59:00-06:00</span>
+<time>2000-01-31T11:59:00-05:00</time>
 ```
 
 ## Documentation

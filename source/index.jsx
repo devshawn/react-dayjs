@@ -86,7 +86,7 @@ DayJS.propTypes = {
 }
 
 DayJS.defaultProps = {
-    element: "span",
+    element: "time",
     date: null,
     format: null,
     toJSON: false,

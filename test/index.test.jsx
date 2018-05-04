@@ -26,12 +26,12 @@ describe("react-dayjs main", () => {
 describe("react-dayjs element", () => {
     it("should be span by default", () => {
         const date = TestUtils.renderIntoDocument(<DayJS date={ DATE_STRING }/>)
-        expect(ReactDOM.findDOMNode(date).tagName).toEqual("SPAN")
+        expect(ReactDOM.findDOMNode(date).tagName).toEqual("TIME")
     })
 
     it("should be able to be changed", () => {
-        const date = TestUtils.renderIntoDocument(<DayJS date={ DATE_STRING } element="div"/>)
-        expect(ReactDOM.findDOMNode(date).tagName).toEqual("DIV")
+        const date = TestUtils.renderIntoDocument(<DayJS date={ DATE_STRING } element="span"/>)
+        expect(ReactDOM.findDOMNode(date).tagName).toEqual("SPAN")
     })
 })
 
