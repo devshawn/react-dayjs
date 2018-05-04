@@ -11,16 +11,16 @@ export function generateInitialDate(date, children) {
 
 export function addToDate(date, add) {
     let dayjsDate = date
-    Object.entries(add).forEach((entry) => {
-        dayjsDate = dayjsDate.add(entry[1], entry[0])
+    Object.keys(add).forEach((key) => {
+        dayjsDate = dayjsDate.add(add[key], key)
     })
     return dayjsDate
 }
 
 export function subtractFromDate(date, subtract) {
     let dayjsDate = date
-    Object.entries(subtract).forEach((entry) => {
-        dayjsDate = dayjsDate.subtract(entry[1], entry[0])
+    Object.keys(subtract).forEach((key) => {
+        dayjsDate = dayjsDate.subtract(subtract[key], key)
     })
     return dayjsDate
 }
