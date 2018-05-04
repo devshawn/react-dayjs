@@ -26,7 +26,7 @@ import DayJS from 'react-dayjs';
 
 export default class MyComponent extends React.Component {
     render() {
-        const date = "2000-01-31T12:59-0500";
+        const date = "2000-01-31T11:59:00-05:00";
         return (
             <DayJS>{ date }</DayJS>
         );
@@ -50,7 +50,7 @@ _date = { string | number | Date | dayjs object }_
 The date to be displayed, if not given as children. The default is the current time.
 
 ```jsx
-<DayJS date={ "2000-01-31T12:59-0500" }>2000-01-31T12:59-0500</DayJS>
+<DayJS date={ "2000-01-31T11:59:00-05:00" }/>
 ```
 
 This will output:
@@ -68,7 +68,7 @@ The format the date should be displayed in. The default is `ISO 8601`, with no f
 The available formats can be found on the [dayjs][dayjs] README.
 
 ```jsx
-<DayJS format="MM-DD-YYYY">2000-01-31T12:59-0500</DayJS>
+<DayJS format="MM-DD-YYYY">2000-01-31T11:59:00-05:00</DayJS>
 ```
 
 This will output:
@@ -84,7 +84,7 @@ _element = { string | React.Component }_
 The element the component should be rendered as. The default is `time`.
 
 ```jsx
-<DayJS element="span">2000-01-31T12:59-0500</DayJS>
+<DayJS element="span">2000-01-31T11:59:00-05:00</DayJS>
 ```
 
 This will output:
@@ -99,7 +99,7 @@ _add = { object }_
 Adds a specific amount of time to the given date.
 
 ```jsx
-<DayJS add={ { hours: 1 } }>2000-01-31T12:59-0500</DayJS>
+<DayJS add={ { hours: 1 } }>2000-01-31T11:59:00-05:00</DayJS>
 ```
 
 This will output:
@@ -114,7 +114,7 @@ _subtract = { object }_
 Subtracts a specific amount of time to the given date.
 
 ```jsx
-<DayJS subtract={ { hours: 1 } }>2000-01-31T12:59-0500</DayJS>
+<DayJS subtract={ { hours: 1 } }>2000-01-31T11:59:00-05:00</DayJS>
 ```
 
 This will output:
@@ -129,7 +129,7 @@ _toJSON = { boolean }_
 Serializes a dayjs object to JSON, which returns an ISO8601 string. 
 
 ```jsx
-<DayJS toJSON={ true }>2000-01-31T12:59-0500</DayJS>
+<DayJS toJSON={ true }>2000-01-31T11:59:00-05:00</DayJS>
 ```
 
 This will output:
@@ -144,7 +144,7 @@ _toISOString = { boolean }_
 Formats a date to an ISO8601 string. 
 
 ```jsx
-<DayJS toISOString={ true }>2000-01-31T12:59-0500</DayJS>
+<DayJS toISOString={ true }>2000-01-31T11:59:00-05:00</DayJS>
 ```
 
 This will output:
@@ -159,7 +159,7 @@ _asString = { boolean }_
 Formats a date as a more readable string, using the `toString` dayjs function.
 
 ```jsx
-<DayJS asString={ true }>2000-01-31T12:59-0500</DayJS>
+<DayJS asString={ true }>2000-01-31T11:59:00-05:00</DayJS>
 ```
 
 This will output:
@@ -174,13 +174,13 @@ _unixSeconds = { boolean }_
 Displays the time as a unix timestamp (the number of seconds since Unix Epoch).
 
 ```jsx
-<DayJS unixSeconds={ true }>2000-01-31T12:59-0500</DayJS>
+<DayJS unixSeconds={ true }>2000-01-31T11:59:00-05:00</DayJS>
 ```
 
 This will output:
 
 ```html
-<time>949341540</time>
+<time>949337940</time>
 ```
 
 ### unixMilliseconds
@@ -189,13 +189,13 @@ _unixMilliseconds = { boolean }_
 Displays the time as a unix timestamp in milliseconds (the number of milliseconds since Unix Epoch).
 
 ```jsx
-<DayJS unixMilliseconds={ true }>2000-01-31T12:59-0500</DayJS>
+<DayJS unixMilliseconds={ true }>2000-01-31T11:59:00-05:00</DayJS>
 ```
 
 This will output:
 
 ```html
-<time>949341540000</time>
+<time>949337940000</time>
 ```
 
 ### daysInMonth
@@ -204,7 +204,7 @@ _daysInMonth = { boolean }_
 Displays the number of days in the month of the given time.
 
 ```jsx
-<DayJS daysInMonth={ true }>2000-01-31T12:59-0500</DayJS>
+<DayJS daysInMonth={ true }>2000-01-31T11:59:00-05:00</DayJS>
 ```
 
 This will output:
@@ -219,7 +219,7 @@ _displayIsValid = { boolean }_
 Displays if the given date is valid.
 
 ```jsx
-<DayJS displayIsValid={ true }>2000-01-31T12:59-0500</DayJS>
+<DayJS displayIsValid={ true }>2000-01-31T11:59:00-05:00</DayJS>
 ```
 
 This will output:

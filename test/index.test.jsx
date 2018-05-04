@@ -4,8 +4,8 @@ import ReactDOM from "react-dom"
 import TestUtils from "react-dom/test-utils"
 import dayjs from "dayjs"
 
-const DATE_STRING = "2000-01-31T12:59-0500"
-const DATE_STRING_2 = "2100-01-31T12:59-0500"
+const DATE_STRING = "2000-01-31T11:59:00-05:00"
+const DATE_STRING_2 = "2100-01-31T11:59:00-05:00"
 
 describe("react-dayjs main", () => {
     it("default", () => {
@@ -29,7 +29,7 @@ describe("react-dayjs main", () => {
     })
 
     it("should render date prop with date in milliseconds", () => {
-        const date = TestUtils.renderIntoDocument(<DayJS date={ 949341540000 }/>)
+        const date = TestUtils.renderIntoDocument(<DayJS date={ 949337940000 }/>)
         expect(ReactDOM.findDOMNode(date).innerHTML).toEqual(dayjs(DATE_STRING).format())
     })
 
