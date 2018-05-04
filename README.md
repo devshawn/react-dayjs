@@ -2,7 +2,14 @@
 
 React component for the [dayjs][dayjs] date library. Currently in active development.
 
-[![Build Status](https://travis-ci.org/devshawn/react-dayjs.svg?branch=master)](https://travis-ci.org/devshawn/react-dayjs) [![codecov](https://codecov.io/gh/devshawn/react-dayjs/branch/master/graph/badge.svg)](https://codecov.io/gh/devshawn/react-dayjs)  [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://raw.githubusercontent.com/headzoo/react-moment/master/LICENSE)
+[![Build Status](https://img.shields.io/travis/devshawn/react-dayjs/master.svg?style=flat-square)](https://travis-ci.org/devshawn/react-dayjs) [![codecov](https://img.shields.io/codecov/c/github/devshawn/react-dayjs/master.svg?style=flat-square)](https://codecov.io/gh/devshawn/react-dayjs)  [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://raw.githubusercontent.com/headzoo/react-moment/master/LICENSE)
+
+* [Installing](#installing)
+* [Quick Start](#quick-start)
+* [Documentation](#documentation)
+* [Contributing](#contributing)
+* [License](#license)
+
 
 ## Installing
 
@@ -18,7 +25,7 @@ Then, import the package into your React project:
 import React from 'react';
 import DayJS from 'react-dayjs';
 
-export default class App extends React.Component {
+export default class Application extends React.Component {
     ...
 }
 ```
@@ -27,10 +34,10 @@ export default class App extends React.Component {
 Add the `DayJS` component to a component:
 
 ```jsx
-import React  from 'react';
+import React from 'react';
 import DayJS from 'react-dayjs';
 
-exports default class MyComponent extends React.Component {
+export default class MyComponent extends React.Component {
     render() {
         const date = "2000-01-31T12:59-0500";
         return (
@@ -40,11 +47,15 @@ exports default class MyComponent extends React.Component {
 }
 ```
 
-Outputs:
+This will output:
 
 ```html
 <span>2000-01-31T11:59:00-06:00</span>
 ```
+
+## Documentation
+
+Read [DOCUMENTATION.md][documentation] to view the technical details of the component and its props.
 
 ## Contributing
 
@@ -56,4 +67,5 @@ This software is released under the MIT license. See [LICENSE.md][license] for m
 
 [contributing]: https://github.com/devshawn/react-dayjs/blob/master/CONTRIBUTING.md
 [dayjs]: https://github.com/xx45/dayjs
+[documentation]: https://github.com/devshawn/react-dayjs/blob/master/DOCUMENTATION.md
 [license]: https://github.com/devshawn/react-dayjs/blob/master/LICENSE.md
