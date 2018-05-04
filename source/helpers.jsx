@@ -10,9 +10,9 @@ export function generateInitialDate(date, children) {
 }
 
 export function addToDate(date, add) {
-    return Object.keys(add).reduce((date, key) => date.add(add[key], key), date)
+    return Object.keys(add).reduce((updatedDate, key) => updatedDate.add(add[key], key), date)
 }
 
 export function subtractFromDate(date, subtract) {
-    return Object.keys(subtract).reduce((date, key) => date.subtract(subtract[key], key), date)
+    return Object.keys(subtract).reduce((updatedDate, key) => updatedDate.subtract(subtract[key], key), date)
 }
