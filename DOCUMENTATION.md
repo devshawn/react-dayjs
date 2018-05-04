@@ -7,6 +7,9 @@ The react-dayjs component, DayJS, is a react component used for displaying, form
     * [Date](#date)
     * [Format](#format)
     * [Element](#element)
+    * [toJSON](#tojson)
+    * [toISOString](#toisostring)
+    * [toString](#tostring)
 
 ## Quick Start
 Add the `DayJS` component to a component:
@@ -47,7 +50,7 @@ The date to be displayed, if not given as children. The default is the current t
 This will output:
 
 ```html
-<span>2000-01-31T11:59:00-05:00</span>
+<time>2000-01-31T11:59:00-05:00</time>
 ```
 
 ### format
@@ -73,4 +76,50 @@ This will output:
 ```html
 <span>2000-01-31T11:59:00-05:00</span>
 ```
+
+### toJSON
+_toJSON = { boolean }_
+
+Serializes a dayjs object to JSON, which returns an ISO8601 string. 
+
+```jsx
+<DayJS toJSON={ true }>2000-01-31T12:59-0500</DayJS>
+```
+
+This will output:
+
+```html
+<time>2000-01-31T17:59:00.000Z</time>
+```
+
+### toISOString
+_toISOString = { boolean }_
+
+Formats a date to an ISO8601 string. 
+
+```jsx
+<DayJS toISOString={ true }>2000-01-31T12:59-0500</DayJS>
+```
+
+This will output:
+
+```html
+<time>2000-01-31T17:59:00.000Z</time>
+```
+
+### toString
+_toString = { boolean }_
+
+Formats a date as a more readable string.
+
+```jsx
+<DayJS toString={ true }>2000-01-31T12:59-0500</DayJS>
+```
+
+This will output:
+
+```html
+<time>Mon, 31 Jan 2000 17:59:00 GMT</time>
+```
+
 [dayjs]: https://github.com/xx45/dayjs#format
