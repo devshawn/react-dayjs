@@ -1,6 +1,6 @@
 # react-dayjs
 
-React component for the [dayjs][dayjs] date library. Currently in active development.
+React component for the [dayjs][dayjs] date library.
 
 [![Build Status](https://img.shields.io/travis/devshawn/react-dayjs/master.svg?style=flat-square)](https://travis-ci.org/devshawn/react-dayjs) [![codecov](https://img.shields.io/codecov/c/github/devshawn/react-dayjs/master.svg?style=flat-square)](https://codecov.io/gh/devshawn/react-dayjs)  [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/devshawn/react-dayjs/blob/master/LICENSE.md)
 
