@@ -1,6 +1,5 @@
 import React from 'react';
 import DayJS from 'react-dayjs';
-import './App.css';
 
 function App() {
   const date = "2000-01-31T12:59-0500";
