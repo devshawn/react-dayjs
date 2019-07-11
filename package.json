@@ -1,6 +1,6 @@
 {
   "name": "react-dayjs",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "React component for the dayjs date library.",
   "main": "dist/index.js",
   "scripts": {
