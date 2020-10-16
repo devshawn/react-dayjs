@@ -1,18 +1,18 @@
 import React, {
     useEffect,
     useState,
-} from "react";
-import PropTypes from "prop-types";
+} from "react"
+import PropTypes from "prop-types"
 import {
     addToDate,
     generateInitialDate,
     subtractFromDate,
-} from "./helpers";
+} from "./helpers"
 
 const DayJS = (props) => {
     const [state, setState] = useState({
         value: "",
-    });
+    })
 
     const update = () => {
         const {
@@ -28,87 +28,87 @@ const DayJS = (props) => {
             unixSeconds,
             unixMilliseconds,
             displayIsValid,
-        } = props;
+        } = props
 
-        let dayjsDate = generateInitialDate(date, children);
+        let dayjsDate = generateInitialDate(date, children)
 
         if (add) {
-            dayjsDate = addToDate(dayjsDate, add);
+            dayjsDate = addToDate(dayjsDate, add)
         }
 
         if (subtract) {
-            dayjsDate = subtractFromDate(dayjsDate, subtract);
+            dayjsDate = subtractFromDate(dayjsDate, subtract)
         }
 
         if (displayIsValid) {
-            return setState((state) => ({
+            return setState(state => ({
                 ...state,
                 value: `${dayjsDate.isValid()}`,
-            }));
+            }))
         }
 
         if (daysInMonth) {
-            return setState((state) => ({
+            return setState(state => ({
                 ...state,
                 value: dayjsDate.daysInMonth(),
-            }));
+            }))
         }
 
         if (toJSON) {
-            return setState((state) => ({
+            return setState(state => ({
                 ...state,
                 value: dayjsDate.toJSON(),
-            }));
+            }))
         }
 
         if (toISOString) {
-            return setState((state) => ({
+            return setState(state => ({
                 ...state,
                 value: dayjsDate.toISOString(),
-            }));
+            }))
         }
 
         if (asString) {
-            return setState((state) => ({
+            return setState(state => ({
                 ...state,
                 value: dayjsDate.toString(),
-            }));
+            }))
         }
 
         if (unixMilliseconds) {
-            return setState((state) => ({
+            return setState(state => ({
                 ...state,
                 value: dayjsDate.valueOf(),
-            }));
+            }))
         }
 
         if (unixSeconds) {
-            return setState((state) => ({
+            return setState(state => ({
                 ...state,
                 value: dayjsDate.unix()
-            }));
+            }))
         }
 
         if (format) {
-            return setState((state) => ({
+            return setState(state => ({
                 ...state,
                 value: dayjsDate.format(format),
-            }));
+            }))
         }
 
-        return setState((state) => ({
+        return setState(state => ({
             ...state,
             value: dayjsDate.format()
-        }));
-    };
+        }))
+    }
 
     useEffect(() => {
-        update(props);
-    }, []);
+        update(props)
+    }, [])
 
-    const Element = props.element;
-    return <Element>{state.value}</Element>;
-};
+    const Element = props.element
+    return <Element>{state.value}</Element>
+}
 
 DayJS.propTypes = {
     element: PropTypes.any,
@@ -129,7 +129,7 @@ DayJS.propTypes = {
     add: PropTypes.object,
     subtract: PropTypes.object,
     children: PropTypes.string,
-};
+}
 
 DayJS.defaultProps = {
     element: "time",
@@ -145,6 +145,6 @@ DayJS.defaultProps = {
     add: null,
     subtract: null,
     children: null,
-};
+}
 
 export default DayJS
