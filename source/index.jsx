@@ -7,7 +7,29 @@ import {
     addToDate,
     generateInitialDate,
     subtractFromDate,
+    objectKeyFilter
 } from "./helpers"
+
+const propTypes = {
+    element: PropTypes.any,
+    date: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number,
+        PropTypes.array,
+        PropTypes.object,
+    ]),
+    format: PropTypes.string,
+    toJSON: PropTypes.bool,
+    toISOString: PropTypes.bool,
+    asString: PropTypes.bool,
+    unixSeconds: PropTypes.bool,
+    unixMilliseconds: PropTypes.bool,
+    daysInMonth: PropTypes.bool,
+    displayIsValid: PropTypes.bool,
+    add: PropTypes.object,
+    subtract: PropTypes.object,
+    children: PropTypes.string,
+}
 
 const DayJS = (props) => {
     const [state, setState] = useState({
@@ -106,30 +128,15 @@ const DayJS = (props) => {
         update(props)
     }, [])
 
-    const Element = props.element
-    return <Element>{state.value}</Element>
+    const elementProps = objectKeyFilter(props, propTypes)
+    return React.createElement(
+        props.element,
+        elementProps,
+        state.value
+    )
 }
 
-DayJS.propTypes = {
-    element: PropTypes.any,
-    date: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.number,
-        PropTypes.array,
-        PropTypes.object,
-    ]),
-    format: PropTypes.string,
-    toJSON: PropTypes.bool,
-    toISOString: PropTypes.bool,
-    asString: PropTypes.bool,
-    unixSeconds: PropTypes.bool,
-    unixMilliseconds: PropTypes.bool,
-    daysInMonth: PropTypes.bool,
-    displayIsValid: PropTypes.bool,
-    add: PropTypes.object,
-    subtract: PropTypes.object,
-    children: PropTypes.string,
-}
+DayJS.propTypes = propTypes
 
 DayJS.defaultProps = {
     element: "time",
