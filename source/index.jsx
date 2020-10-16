@@ -9,14 +9,10 @@ import {
     subtractFromDate,
 } from "./helpers";
 
-export default DayJS = (props) => {
+const DayJS = (props) => {
     const [state, setState] = useState({
         value: "",
     });
-
-    useEffect(() => {
-        update(props);
-    }, []);
 
     const update = () => {
         const {
@@ -106,6 +102,10 @@ export default DayJS = (props) => {
         }));
     };
 
+    useEffect(() => {
+        update(props);
+    }, []);
+
     const Element = props.element;
     return <Element>{state.value}</Element>;
 };
@@ -147,3 +147,4 @@ DayJS.defaultProps = {
     children: null,
 };
 
+export default DayJS
