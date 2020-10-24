@@ -53,6 +53,21 @@ describe("react-dayjs element", () => {
         const { container } = render(<DayJS date={ DATE_STRING } element="span"/>)
         expect(container.firstChild.tagName).toEqual("SPAN")
     })
+
+    it("className should be handed to element", () => {
+        const { container } = render(<DayJS
+            date={ DATE_STRING }
+            className="myClassName"/>)
+        expect(container.firstChild.className).toEqual("myClassName")
+    })
+
+    it("style should be handed to element", () => {
+        const { container } = render(<DayJS
+            date={ DATE_STRING }
+            style={ { fontSize: 30 } }
+            element="h1"/>)
+        expect(container.firstChild.style._values).toEqual({ "font-size": "30px" })
+    })
 })
 
 describe("react-dayjs manipulation", () => {
