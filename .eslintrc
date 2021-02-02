@@ -41,6 +41,7 @@
       "error",
       "never"
     ],
+    "no-shadow": ["error", { "allow": ["state"] }],
     "comma-dangle": "off",
     "import/no-extraneous-dependencies": "off",
     "max-len": "off",
