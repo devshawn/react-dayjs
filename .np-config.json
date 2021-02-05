@@ -1,0 +1,7 @@
+{
+	"name": "react-dayjs",
+	"np": {
+		"yarn": false,
+		"contents": "dist"
+	}
+}
