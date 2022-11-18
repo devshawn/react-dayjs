@@ -7,7 +7,7 @@
     "react": "^17.0.1",
     "react-dayjs": "file:..",
     "react-dom": "^17.0.1",
-    "react-scripts": "3.0.1"
+    "react-scripts": "5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
